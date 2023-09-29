@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nettikauppa.fi</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel="stylesheet" >
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <header>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars">≡</i>
+        </label>
+        <label class="logo">Nettikauppa.fi</label>
+        <ul>
+
+            
+
+            <li class="lang-menu">
+                <div class="selected-lang" id="selected-lang">
+                    <img src ="" id="language-image"> <h1 id="selectedLanguage"></h1>
+                </div>
+                <ul class="kielet">
+                    <li>
+                        <a href="#finnish"  class="fin">Finnish</a>
+                    </li>
+                    <li>
+                        <a href="#english"  class="en">English</a>
+                    </li>
+                    <li>
+                        <a href="#swedish"  class="swe">Swedish</a>
+                    </li>
+                </ul>
+            </li>
+
+            
+            
+
+            <li><a class="nav-link" href="#home">Home</a></li>
+            <li><a class="nav-link" href="#products" >Products</a></li>
+            <li><a class="nav-link" href="#services" >Services</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
+
+
+            
+            <i class='bx bx-shopping-bag' href="#cart" id="cart-icon"></i>
+            <!-- Cart -->
+            <div class="cart">
+                <h2 class="cart-title">Your Cart</h2>
+                <!-- Content -->
+                <div class="cart-content">
+
+                </div>
+                <!-- Total-->
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">0€</div>
+                </div>
+                <!-- Buy Button-->
+                <button type ="button" class="btn-buy">Buy Now</button>
+                <!-- Cart Close -->
+                <i class='bx bx-x' id="close-cart"></i>
+            </div>
+       
+        </ul>
+    </nav>
+</header>
+
+
+
+    <script>
+
+
+
+
+function changeLanguage(language) {
+    // Your code to set the selected language (e.g., language = "finnish")
+    // Update the hash to reflect the selected language
+    window.location.hash = "#" + language;
+
+}
+
+
+
+var languageImageSrcMap = {
+    "finnish": "assets/pictures/fin.png",
+    "english": "assets/pictures/english.png",
+    "swedish": "assets/pictures/swe.png"
+};
+
+        function clearContent() {
+            const contentDiv = document.getElementById("content");
+            contentDiv.innerHTML = "";
+        }
+
+        // Function to load and show the shop section
+        function loadShopSection() {
+            clearContent();
+            const contentDiv = document.getElementById("content");
+    
+            // Check if the shop section is already loaded
+            if (!contentDiv.contains(document.getElementById("shop-section"))) {
+                // Shop section is not loaded, so load it
+                const shopSection = document.createElement("section");
+                shopSection.className = "shop container";
+                shopSection.id = "shop-section";
+                
+                shopSection.innerHTML = kauppa;
+                
+                // You can add your shop content here, e.g., product listings
+    
+                contentDiv.appendChild(shopSection);
+
+
+        const script = document.createElement("script");
+        script.src = "main.js";
+        document.body.appendChild(script);
+            }
+    
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+    <div id="content">
+        <!-- Content from different pages will be loaded here -->
+    </div>
+
+    <script>
+
+
+        // Function to load content based on the hash in the URL
+        function loadContent() {
+            const contentDiv = document.getElementById("content");
+            const hash = window.location.hash;
+
+
+
+            var selectedLanguage = hash.substr(1); // Remove the '#' symbol
+             var languageImageSrc = languageImageSrcMap[selectedLanguage];
+             document.getElementById("language-image").src = languageImageSrc;
+            
+
+
+
+
+            
+            switch (hash) {
+                case "#home":
+                    clearContent();
+                    contentDiv.innerHTML = Tervetuloa;
+                    break;
+
+                case "#services":
+                    contentDiv.innerHTML = palvelut;
+                    
+                    break;
+                case "#contact":
+                    contentDiv.innerHTML = kontakti;
+                    break;
+
+                case "#products":
+                loadShopSection();
+                    contentDiv.innerHTML = kauppa;
+                    break;
+                
+                case "#cart":
+                    contentDiv.innerHTML = "<h1>Your Shopping Cart</h1><p>Your cart is currently empty.</p>";
+                    break;
+
+
+
+
+                case "#finnish":
+
+                Koti = "koti";
+                languageText = "Suomi";
+                // KONTAKTI
+                window.location.hash =history.back();
+                 languageImg = "assets/pictures/fin.png";
+
+                        kontakti = `<section>
+                        <h1>Ota Yhteyttä!</h1>
+                        <p></p>  
+                        <div class="hero">
+                            <form>
+                                <div class="row">
+                                    <div class="input-group">
+                                        <input type="text" id="name" required>
+                                        <label class="jooo" for="name"> Nimi</label>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <input type="text" id="number" required>
+                                        <label class="jooo" for="number">Puh Nro.</label>
+                                    </div>
+                                </div>
+
+                                <div class="input-group">
+                                    <input type="text" id="email" required>
+                                    <label class="jooo" for="email">Sähköposti</label>
+                                </div>
+
+                                <div class="input-group">
+                                    <textarea id="message" rows="8" required></textarea>
+                                    <label class="jooo" for="message">Viestisi Meille</label>
+                                </div>
+
+                                <button type="submit">LÄHETÄ </button>
+                            </form>
+                        </div>
+                    </section>
+                    `;
+                    // päivittää sivun kun kieltä vaihdetaan
+
+
+
+                    kauppa = `<h2 class="section-title">Tuotteet</h2>
+        <div class="shop-content">
+            <!-- Tuote 1-->
+            <div class="product-box">
+                <img src="assets/pictures/piano.png" alt="" class="product-img">
+                <h2 class="product-title">SÄHKÖ PIANO</h2>
+                <span class="price">1179.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 2-->
+            <div class="product-box">
+                <img src="assets/pictures/kitara.png" alt="" class="product-img">
+                <h2 class="product-title">AKUSTINEN KITARA</h2>
+                <span class="price">649.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 3-->
+            <div class="product-box">
+                <img src="assets/pictures/sähkökitara.png" alt="" class="product-img">
+                <h2 class="product-title">SÄHKÖKITARA</h2>
+                <span class="price">2499.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 4-->
+            <div class="product-box">
+                <img src="assets/pictures/rummut.png" alt="" class="product-img">
+                <h2 class="product-title">RUMMUT</h2>
+                <span class="price">275.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 5-->
+            <div class="product-box">
+                <img src="assets/pictures/foni.png" alt="" class="product-img">
+                <h2 class="product-title">SAKSOFONI</h2>
+                <span class="price">1179.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+        
+        </div>`;
+        
+                palvelut = `<h1>Palvelut</h1>
+                    <h1>Our Services</h1>
+                    <h1>Our Services</h1>
+                    <h1>Our Services</h1>
+                    <h1>Our Services</h1><p>ÄÖÄÖÄÖÄÖÄÖÄÖÖÄ.</p>
+                    <h1>Our Services</h1>
+                    <h1>Our Services</h1><p>We provide top-notch services.</p>`
+                    
+                        Tervetuloa = "Tervetuloa nettisivuillemme";
+
+                        
+                    // Handle language change to Finnish
+                    break;
+
+
+
+
+
+                case "#english":
+                window.location.hash =history.back();
+                languageImg = "assets/pictures/english.png";
+                languageText = "English";
+
+                kauppa = `<h2 class="section-title">Shop products</h2>
+        <div class="shop-content">
+            <!-- Tuote 1-->
+            <div class="product-box">
+                <img src="assets/pictures/piano.png" alt="" class="product-img">
+                <h2 class="product-title">ELECTRIC PIANO</h2>
+                <span class="price">1179.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 2-->
+            <div class="product-box">
+                <img src="assets/pictures/kitara.png" alt="" class="product-img">
+                <h2 class="product-title">ACOUSTIC GUITAR</h2>
+                <span class="price">649.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 3-->
+            <div class="product-box">
+                <img src="assets/pictures/sähkökitara.png" alt="" class="product-img">
+                <h2 class="product-title">ELECTRIC GUITAR</h2>
+                <span class="price">2499.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 4-->
+            <div class="product-box">
+                <img src="assets/pictures/rummut.png" alt="" class="product-img">
+                <h2 class="product-title">DRUMS</h2>
+                <span class="price">275.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 5-->
+            <div class="product-box">
+                <img src="assets/pictures/foni.png" alt="" class="product-img">
+                <h2 class="product-title">SAXOPHONE</h2>
+                <span class="price">1179.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+        
+        </div>`
+
+
+                // KONTAKTI
+                
+                kontakti = `<section>
+                        <h2>Contact Us!</h2>
+                        <p></p>  
+                        <div class="hero">
+                            <form>
+                                <div class="row">
+                                    <div class="input-group">
+                                        <input type="text" id="name" required>
+                                        <label class="jooo" for="name"> Your Name</label>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <input type="text" id="number" required>
+                                        <label class="jooo" for="number">Phone No.</label>
+                                    </div>
+                                </div>
+
+                                <div class="input-group">
+                                    <input type="text" id="email" required>
+                                    <label class="jooo" for="email">E-mail Id</label>
+                                </div>
+
+                                <div class="input-group">
+                                    <textarea id="message" rows="8" required></textarea>
+                                    <label class="jooo" for="message">Your Message</label>
+                                </div>
+
+                                <button type="submit">SUBMIT</button>
+                            </form>
+                        </div>
+                    </section>`;
+
+                    palvelut = `<h1>Our Services</h1><p>We provide top-notch services.</p>
+                    <h1>Our Services</h1><p>We provide top-notch services.</p>
+                    <h1>Our Services</h1><p>We provide top-notch services.</p>
+                    <h1>Our Services</h1><p>We provide top-notch services.</p>
+                    <h1>Our Services</h1><p>We provide top-notch services.</p>
+                    <h1>Our Services</h1><p>We provide top-notch services.</p>
+                    <h1>Our Services</h1><p>We provide top-notch services.</p>`
+
+
+                    Tervetuloa ="Welcome to our website";
+
+
+                    break;
+
+
+
+
+
+
+                case "#swedish":
+
+                    // CONTACT
+                    window.location.hash =history.back();
+                    languageImg = "assets/pictures/swe.png";
+                    languageText = "Sverige";
+                kontakti = `<section>
+                        <h2>Ta Kontakt!</h2>
+                        <p></p>  
+                        <div class="hero">
+                            <form>
+                                <div class="row">
+                                    <div class="input-group">
+                                        <input type="text" id="name" required>
+                                        <label class="jooo" for="name"> Ditt Namn</label>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <input type="text" id="number" required>
+                                        <label class="jooo" for="number">Telefonnummer</label>
+                                    </div>
+                                </div>
+
+                                <div class="input-group">
+                                    <input type="text" id="email" required>
+                                    <label class="jooo" for="email">E-Post</label>
+                                </div>
+
+                                <div class="input-group">
+                                    <textarea id="message" rows="8" required></textarea>
+                                    <label class="jooo" for="message">Ditt Meddelande</label>
+                                </div>
+
+                                <button type="submit">Skicka In</button>
+                            </form>
+                        </div>
+                    </section>`;
+
+
+                    kauppa =
+                     `<h2 class="section-title">Produkter</h2>
+        <div class="shop-content">
+            <!-- Tuote 1-->
+            <div class="product-box">
+                <img src="assets/pictures/piano.png" alt="" class="product-img">
+                <h2 class="product-title">ELEKTRISKA PIANO</h2>
+                <span class="price">1179.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 2-->
+            <div class="product-box">
+                <img src="assets/pictures/kitara.png" alt="" class="product-img">
+                <h2 class="product-title">AKUSTISK GITARR</h2>
+                <span class="price">649.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 3-->
+            <div class="product-box">
+                <img src="assets/pictures/sähkökitara.png" alt="" class="product-img">
+                <h2 class="product-title">ELEKTRISKA GITARR</h2>
+                <span class="price">2499.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 4-->
+            <div class="product-box">
+                <img src="assets/pictures/rummut.png" alt="" class="product-img">
+                <h2 class="product-title">TRUMMOR</h2>
+                <span class="price">275.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 5-->
+            <div class="product-box">
+                <img src="assets/pictures/foni.png" alt="" class="product-img">
+                <h2 class="product-title">SAXOFON</h2>
+                <span class="price">1179.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+        
+        </div>`
+
+
+        palvelut = `<h1>Our Services</h1><p>We provide top-notch services.</p>
+                    <h1>Our Services</h1><p>We provide top-notcrvices.</p>
+                    <h1>Our Services</h1><p>We provide top-notch services.</p>
+                    <h1>Our Services</h1><p>We provide top-notch services.</p>
+                    <h1>Our Services</h1><p>We prtop-notch services.</p>
+                    <h1>Our Services</h1><p>We proviervices.</p>
+                    <h1>Our Services</h1><p>We prgrhuodghuidgfbup-notch services.</p>`
+
+
+                    Tervetuloa = "Villkommen till meidän nettisivu";
+
+                    // Handle language change to Swedish
+                    break;
+                    
+                
+            }
+            document.getElementById("selectedLanguage").textContent = languageText;
+            document.getElementById("language-image").src = languageImg;
+        }
+
+
+
+
+
+        // Load content when the page loads or when the hash changes
+        window.addEventListener("load", loadContent);
+        window.addEventListener("hashchange", loadContent);
+
+        // Initialize content based on the current hash
+        loadContent();
+
+        function setDefaultLanguage() {
+        if (!window.location.hash) {
+            // If no hash is present, set it to English by default
+            window.location.hash = "english";
+        }
+    }
+
+    // Call the function when the page loads
+    window.addEventListener("load", setDefaultLanguage);
+
+        
+        
+    </script>
+</body>
+</html>
