@@ -1,7 +1,6 @@
-// Cart
-let cartIcon = document.querySelector("#cart-icon");
-let cart = document.querySelector(".cart");
-let closeCart = document.querySelector("#close-cart");
+var cartIcon = document.querySelector("#cart-icon");
+var cart = document.querySelector(".cart");
+var closeCart = document.querySelector("#close-cart");
 
 cartIcon.onclick = () =>{
     cart.classList.add("active");
@@ -11,12 +10,19 @@ closeCart.onclick = () =>{
     cart.classList.remove("active");
 };
 
+
+
 // Cart Working JS
 if(document.readyState == "loading"){
     document.addEventListener('DOMContentLoaded', ready);
 }else{
     ready();
 }
+
+
+
+
+
 
 // Making function
 function ready(){
