@@ -473,13 +473,13 @@ body{
           width: 280px;
       }
   }
-
-
+  
+  
   .hero{
   
     width: 110%;
     height: 80vh;
-    background-image: url("../assets/pictures/kitara.png"); 
+    background-image: url("../assets/pictures/contact.png"); 
     background-position: center;
     background-size: cover;
     background-color: #093d6a;
@@ -488,19 +488,19 @@ body{
     justify-content: center;
     margin: auto;
   }
-
+  
   form{
   width: 80%;
   max-width: 600px;
-}
-
-.input-group{
+  }
+  
+  .input-group{
   margin-bottom: 30px;
   position: relative; 
   
-}
-
-input, textarea{
+  }
+  
+  input, textarea{
   width: 100%;
   padding: 5px;
   outline: 0;
@@ -508,9 +508,9 @@ input, textarea{
   color: #000000;
   background : transparent;
   font-size: 15px;
-}
-
-label.jooo{
+  }
+  
+  label.jooo{
   height: 100%;
   position: absolute;
   left: 0;
@@ -519,8 +519,8 @@ label.jooo{
   color: #000000;
   cursor: text;
   transition: 0.25s;
-}
-button{
+  }
+  button{
   padding: 10px;
   color: #000000 !important;
   outline: none;
@@ -529,23 +529,23 @@ button{
   width: 100%;
   cursor: pointer;
   transition: 0.3s ease-in-out;
-
-
-}
-
-button:hover{
+  
+  
+  }
+  
+  button:hover{
     background-color: #7f7fa9 !important;
   }
-
+  
   input:focus~label.jooo,
   input:valid~label.jooo,
-textarea:focus~label.jooo,
-textarea:valid~label.jooo{
+  textarea:focus~label.jooo,
+  textarea:valid~label.jooo{
   top: -35px;
   font-size: 14px;
-}
-
-.row{
+  }
+  
+  .row{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -556,11 +556,82 @@ textarea:valid~label.jooo{
     flex-basis: 48%;
     
   }
-
+  
   .selected-lang{
     color: rgb(255, 255, 255);
     font-size: 10px;
     align-items: center;
     padding: 1 30px;
     font-weight: bold;
+  }
+  
+  
+  .blog-section{
+    width: 100%;
+  }
+  
+  .blog-section .section-content{
+    width: 85%;
+    margin: 20px auto;
+  }
+  
+  .blog-section .section-content .title{
+    width: 60%;
+    text-align: center;
+    margin: auto;
+  }
+  
+  .blog-section .section-content .title h2{
+    font-size: 40px;
+    color: #01571e;
+    text-transform: uppercase;
+  }
+  
+  .blog-section .section-content .title p{
+    font-size: 18px; 
+    color: #7c5a5a;
+    margin-top: 20px;
+  }
+  
+  .blog-section .section-content .cards{
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin: 25px auto;
+  }
+  
+  .blog-section .section-content .cards .card{
+    width: 100%;
+    background-color: #faf8f8; 
+    
+  }
+  
+  .blog-section .section-content .cards .card img{
+    width: 100%;
+    height: auto;
+  }
+  
+  .blog-section .section-content .cards .card .article{
+    padding: 15px 20px;
+  }
+  
+  .blog-section .section-content .cards .card .article h4{
+    font-size: 24px;
+    color: #4a4a4a;
+  }
+  
+  .blog-section .section-content .cards .card .article p{
+    font-size: 16px;
+    margin:10px 0px;
+    color: #6a6a6a
+  }
+  
+  .blog-section .section-content .cards .card a{
+    text-decoration: none;
+    display: inline-block;
+    background-color: #adcdb5;
+    padding: 8px 1px;
+    margin-left: 20px;
+    color: #000000;
+    margin-bottom: 20px;
   }

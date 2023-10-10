@@ -15,11 +15,12 @@
         <label for="check" class="checkbtn">
             <i class="fas fa-bars">≡</i>
         </label>
-        <label class="logo">Nettikauppa.fi</label>
+        <label class="logo">Musakauppa.fi</label>
         <ul>
 
             <script>languageImg = "assets/pictures/english.png";
                 languageText = "English";
+                
                 </script>
 
             <li class="lang-menu">
@@ -53,10 +54,7 @@
             <!-- Cart -->
             <div class="cart">
                 <h2 class="cart-title">Your Cart</h2>
-                <!-- Content -->
-                <div class="cart-content">
-
-                </div>
+                
                 <!-- Total-->
                 <div class="total">
                     <div class="total-title">Total</div>
@@ -64,6 +62,10 @@
                 </div>
                 <!-- Buy Button-->
                 <button type ="button" class="btn-buy">Buy Now</button>
+                <!-- Content -->
+                <div class="cart-content">
+
+                </div>
                 <!-- Cart Close -->
                 <i class='bx bx-x' id="close-cart"></i>
             </div>
@@ -80,18 +82,15 @@
 
 
 
-                
+window.addEventListener("unload", function() {
+    languageText = "Suuomi";
+});
 
 
 
 
 
-function changeLanguage(language) {
-    // Your code to set the selected language (e.g., language = "finnish")
-    // Update the hash to reflect the selected language
-    window.location.hash = "#" + language;
 
-}
 
 
 
@@ -117,7 +116,7 @@ var languageImageSrcMap = {
                 
                 shopSection.innerHTML = kauppa;
                 
-                // You can add your shop content here, e.g., product listings
+
     
                 contentDiv.appendChild(shopSection);
 
@@ -135,14 +134,13 @@ var languageImageSrcMap = {
 
 
 
-
-
-
-
     <div id="content">
         
         <!-- Content from different pages will be loaded here -->
     </div>
+
+
+
 
     <script>
 
@@ -165,14 +163,19 @@ var languageImageSrcMap = {
             
             switch (hash) {
                 
-                case "":
+                
+            
                 case "#home":
-                    contentDiv.innerHTML = "<h1>Welcome to our website</h1>";
+                    
+                    contentDiv.innerHTML = Tervetuloa;
                     break;
+
+                    
 
                 
                 case "#services":
                     contentDiv.innerHTML = palvelut;
+                    
                     
                     break;
                 case "#contact":
@@ -192,8 +195,9 @@ var languageImageSrcMap = {
 
                 case "#finnish":
 
-                Koti = "koti";
+
                 languageText = "Suomi";
+                
                 
                 // päivittää sivun kun kieltä vaihdetaan
                 window.location.hash =history.back();
@@ -241,53 +245,175 @@ var languageImageSrcMap = {
             <!-- Tuote 1-->
             <div class="product-box">
                 <img src="assets/pictures/piano.png" alt="" class="product-img">
-                <h2 class="product-title">SÄHKÖ PIANO</h2>
+                <h2 class="product-title">ROLAND SÄHKÖPIANO</h2>
                 <span class="price">1179.00€</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
             <!-- Tuote 2-->
             <div class="product-box">
                 <img src="assets/pictures/kitara.png" alt="" class="product-img">
-                <h2 class="product-title">AKUSTINEN KITARA</h2>
+                <h2 class="product-title">KLASSINEN AKUSTINEN KITARA</h2>
                 <span class="price">649.00€</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
             <!-- Tuote 3-->
             <div class="product-box">
-                <img src="assets/pictures/sähkökitara.png" alt="" class="product-img">
-                <h2 class="product-title">SÄHKÖKITARA</h2>
-                <span class="price">2499.00€</span>
+                <img src="assets/pictures/teräsk.png" alt="" class="product-img">
+                <h2 class="product-title">SIGMA 000MC-15E ASKUSTINEN KITARA</h2>
+                <span class="price">540.00€</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
             <!-- Tuote 4-->
             <div class="product-box">
-                <img src="assets/pictures/rummut.png" alt="" class="product-img">
-                <h2 class="product-title">RUMMUT</h2>
-                <span class="price">275.00€</span>
+                <img src="assets/pictures/sähkökitara.png" alt="" class="product-img">
+                <h2 class="product-title">SAITO S-622CS HSS SÄHKÖKITARA</h2>
+                <span class="price">2499.00€</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
             <!-- Tuote 5-->
+            <div class="product-box">
+                <img src="assets/pictures/rummut.png" alt="" class="product-img">
+                <h2 class="product-title">YAMAHA RYDEEN STADARD RUMPUSETTI</h2>
+                <span class="price">866.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 6-->
             <div class="product-box">
                 <img src="assets/pictures/foni.png" alt="" class="product-img">
                 <h2 class="product-title">SAKSOFONI</h2>
                 <span class="price">1179.00€</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
+
+            <!-- Tuote 7-->
+            <div class="product-box">
+                <img src="assets/pictures/kaapeli.png" alt="" class="product-img">
+                <h2 class="product-title">TRS-KAAPELI 3M</h2>
+                <span class="price">23.90€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 8-->
+            <div class="product-box">
+                <img src="assets/pictures/mikrofoni.png" alt="" class="product-img">
+                <h2 class="product-title">RODE NT1-A ÄÄNITYSSETTI</h2>
+                <span class="price">198.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 9-->
+            <div class="product-box">
+                <img src="assets/pictures/vahvistin.png" alt="" class="product-img">
+                <h2 class="product-title">MARSHALL DSL20CR</h2>
+                <span class="price">549.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 10-->
+            <div class="product-box">
+                <img src="assets/pictures/miksaus.png" alt="" class="product-img">
+                <h2 class="product-title">YAMAHA MG20 XU MAIKSAUSPÖYTÄ</h2>
+                <span class="price">899.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
         
         </div>`;
         
-                palvelut = `<h1>Palvelut</h1>
-                    <h1>Our Services</h1>
-                    <h1>Our Services</h1>
-                    <h1>Our Services</h1>
-                    <h1>Our Services</h1><p>ÄÖÄÖÄÖÄÖÄÖÄÖÖÄ.</p>
-                    <h1>Our Services</h1>
-                    <h1>Our Services</h1><p>We provide top-notch services.</p>`
+                palvelut = `<div class="blog-section">
+      <div class="section-content blog">
+
+        <div class="title">
+          <h2>PALVELUT</h2>
+          <p>Tarjoamme tuotteidemme lisäksi erilaisia palveluja, ota rohkeasti yhteyttä vastaamme mielellämme kysymyksiinne!</p>
+             </div>
+               <div class="cards">
+                <div class="card">
+                   <div class="image-section">
+                    <img src="assets/pictures/mainos1.png" alt="Evoluutio2">
+                   </div>
+                       <div class="article">
+                            <h4>Opi soittamaan kitaraa mukavasti omassa kodissasi!</h4>
+                            <p>
+
+                                Haluaisitko mestaroida kitaran soiton tai parantaa nykyisiä taitojasi? Etsitkö joustavaa ja kätevää tapaa oppia? Meillä on ratkaisu sinulle!
+                                
+                                Online-kitaratunnit ammattilaisten opastuksella
+                                
+                                Liity tuhansien tyytyväisten oppilaiden joukkoon, jotka ovat oppineet soittamaan kitaraa kanssamme. Tarjoamme korkealaatuisia kitaratunteja, jotka sopivat kaikille taitotasoille, aloittelijoista kokeneisiin soittajiin.
+                                
+                                Miksi valita meidät:
+                                
+                                Kokeneet ja ammattitaitoiset opettajat: Opettajamme ovat intohimoisia ja omistautuneita musiikin ammattilaisia, jotka auttavat sinua saavuttamaan tavoitteesi.
+                                
+                                Joustavat aikataulut: Voit valita oppituntisi ajankohdan, joka sopii sinulle parhaiten. Ei enää kiirettä oppitunneille!
+                                
+                                Yksilöllinen opetus: Kitaratuntimme räätälöidään juuri sinun tarpeidesi mukaan, jotta voit edetä omassa tahdissasi.
+                                
+                                Interaktiivinen oppimisympäristö: Käytämme moderneja teknologioita ja opetusvälineitä tehdäksemme oppimisesta hauskaa ja tehokasta.
+                                
+                                Kattava opetusmateriaali: Saat pääsyn laajaan valikoimaan oppimateriaalia ja harjoituksia, jotka auttavat sinua kehittymään nopeasti.
+                                
+                                Miten aloitat:
+                                
+                                Ilmoittaudu kurssillemme verkkosivustollamme.
+                                Valitse sopiva oppituntien aika.
+                                Ota ensimmäinen askel kohti kitaran soiton hallintaa!
+                                Älä hukkaa enää aikaa, vaan aloita matkasi kitaran maailmaan kanssamme. Ota yhteyttä meille tänään saadaksesi lisätietoja ja ilmoittaudu kurssillemme!</p>
+                       </div>
+                      </div>
+
+
+
+
+                        <div class="card">
+                           <div class="image-section">
+                            <img src="assets/pictures/manios2.png" >
+                           </div>
+                               <div class="article">
+                                    <h4>Täydellinen musiikkiapu on vain klikkauksen päässä!</h4>
+                                    <p>Oletko etsimässä musiikkivarusteita tai tarvitsetko neuvoa oikean tuotteen valinnassa? Meidän musiikkikaupan asiakasneuvonta on täällä auttamassa sinua!
+                                        Asiantuntijaneuvojat valmiina palvelemaan sinua
+                                        Asiakaspalvelumme tiimi koostuu musiikin ammattilaisista, jotka ovat omistautuneita auttamaan sinua löytämään parhaat ratkaisut musiikkitarpeisiisi. Olipa kyseessä sähkökitara, akustinen piano, äänitysvälineet tai musiikkiohjelmistot, meillä on tietoa ja kokemusta, jota tarvitset.
+                                        Miten voimme auttaa sinua tänään:
+                                        Ota yhteyttä asiakaspalveluumme ja kerro meille tarpeistasi.
+                                        Saat asiantuntijaneuvoja, joka auttaa sinua löytämään oikeat tuotteet.
+                                    </p>
+                               </div>
+                        </div>
+
+                                  <div class="card">
+                                   <div class="image-section">
+                                    <img src="assets/pictures/mainos3.png" >
+                                   </div>
+                                       <div class="article">
+                                            <h4>Opi soittamaan pianoa ammattilaisten opetuksella!</h4>
+                                            <p>Online-pianotunnit ammattilaisopettajien johdolla!
+                                                Liity kasvavaan joukkoon pianonsoittajia, jotka ovat oppineet soittamaan pianoa kanssamme. Tarjoamme korkealaatuisia online-pianotunteja kaikenikäisille ja kaikille taitotasoille, aina aloittelijoista virtuooseihin.
+                                                Miksi valita meidät:
+
+                                            Kokeneet opettajat: Opettajamme ovat ammattilaisia, joilla on vuosien kokemus pianonsoitosta ja opetuksesta.
+
+                                            Yksilöllinen opetus: Jokainen oppitunti räätälöidään oppilaan tarpeiden mukaan, jotta voit edetä omassa tahdissasi ja saavuttaa tavoitteesi.
+
+                                            Joustavat aikataulut: Voit valita oppituntisi ajan, joka sopii sinulle parhaiten, ilman matkustamisen vaivaa.
+
+                                            Monipuolinen oppiminen: Tarjoamme monipuolisia opetusmateriaaleja ja harjoituksia, jotka auttavat sinua kehittymään nopeasti.
+
+                                            Teknologian hyödyntäminen: Käytämme moderneja teknologioita tarjotaksemme sinulle interaktiivisen ja tehokkaan oppimiskokemuksen.
+
+                                            Kuinka aloitat:
+
+                                            Ilmoittaudu pianotunneillemme verkkosivustollamme.
+                                            Valitse sopiva oppituntien aika.
+                                            Aloita matkasi pianonsoiton maailmaan!
+                                            </p>
+                                       </div>
+                                 </div>
+                                </div>
+
+              </div>
+            </div>`
                     
                         Tervetuloa = "Tervetuloa nettisivuillemme";
 
                         
-                    // Handle language change to Finnish
                     break;
 
 
@@ -304,36 +430,72 @@ var languageImageSrcMap = {
             <!-- Tuote 1-->
             <div class="product-box">
                 <img src="assets/pictures/piano.png" alt="" class="product-img">
-                <h2 class="product-title">ELECTRIC PIANO</h2>
+                <h2 class="product-title">ROLAND ELECTRIC PIANO</h2>
                 <span class="price">1179.00€</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
             <!-- Tuote 2-->
             <div class="product-box">
                 <img src="assets/pictures/kitara.png" alt="" class="product-img">
-                <h2 class="product-title">ACOUSTIC GUITAR</h2>
+                <h2 class="product-title">NYLONSTRING ACOUSTIC GUITAR</h2>
                 <span class="price">649.00€</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
             <!-- Tuote 3-->
             <div class="product-box">
-                <img src="assets/pictures/sähkökitara.png" alt="" class="product-img">
-                <h2 class="product-title">ELECTRIC GUITAR</h2>
-                <span class="price">2499.00€</span>
+                <img src="assets/pictures/teräsk.png" alt="" class="product-img">
+                <h2 class="product-title">SIGMA 000MC-15E STEEL STRING GUITAR</h2>
+                <span class="price">540.00€</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
             <!-- Tuote 4-->
             <div class="product-box">
-                <img src="assets/pictures/rummut.png" alt="" class="product-img">
-                <h2 class="product-title">DRUMS</h2>
-                <span class="price">275.00€</span>
+                <img src="assets/pictures/sähkökitara.png" alt="" class="product-img">
+                <h2 class="product-title">SAITO S-622CS HSS ELECTRIC GUITAR</h2>
+                <span class="price">2499.00€</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
             <!-- Tuote 5-->
             <div class="product-box">
+                <img src="assets/pictures/rummut.png" alt="" class="product-img">
+                <h2 class="product-title">YAMAHA RYDEEN STADARD DRUM SET</h2>
+                <span class="price">275.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 6-->
+            <div class="product-box">
                 <img src="assets/pictures/foni.png" alt="" class="product-img">
                 <h2 class="product-title">SAXOPHONE</h2>
                 <span class="price">1179.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+
+            <!-- Tuote 7-->
+            <div class="product-box">
+                <img src="assets/pictures/kaapeli.png" alt="" class="product-img">
+                <h2 class="product-title">TRS-CABLE 3M</h2>
+                <span class="price">23.90€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 8-->
+            <div class="product-box">
+                <img src="assets/pictures/mikrofoni.png" alt="" class="product-img">
+                <h2 class="product-title">RODE NT1-A VOCALSET</h2>
+                <span class="price">198.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 9-->
+            <div class="product-box">
+                <img src="assets/pictures/vahvistin.png" alt="" class="product-img">
+                <h2 class="product-title">MARSHALL DSL20CR AMP</h2>
+                <span class="price">549.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 10-->
+            <div class="product-box">
+                <img src="assets/pictures/miksaus.png" alt="" class="product-img">
+                <h2 class="product-title">YAMAHA MG20 XU MIX TABLE</h2>
+                <span class="price">899.00€</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
         
@@ -438,36 +600,72 @@ var languageImageSrcMap = {
             <!-- Tuote 1-->
             <div class="product-box">
                 <img src="assets/pictures/piano.png" alt="" class="product-img">
-                <h2 class="product-title">ELEKTRISKA PIANO</h2>
+                <h2 class="product-title">ROLAND ELEKTRISKA PIANO</h2>
                 <span class="price">1179.00€</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
             <!-- Tuote 2-->
             <div class="product-box">
                 <img src="assets/pictures/kitara.png" alt="" class="product-img">
-                <h2 class="product-title">AKUSTISK GITARR</h2>
+                <h2 class="product-title">NYLON SNÖRE AKUSTISK GITARR</h2>
                 <span class="price">649.00€</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
             <!-- Tuote 3-->
             <div class="product-box">
-                <img src="assets/pictures/sähkökitara.png" alt="" class="product-img">
-                <h2 class="product-title">ELEKTRISKA GITARR</h2>
-                <span class="price">2499.00€</span>
+                <img src="assets/pictures/teräsk.png" alt="" class="product-img">
+                <h2 class="product-title">SIGMA 000MC-15E STÅLSTRÄNG GITARR</h2>
+                <span class="price">540.00€</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
             <!-- Tuote 4-->
             <div class="product-box">
-                <img src="assets/pictures/rummut.png" alt="" class="product-img">
-                <h2 class="product-title">TRUMMOR</h2>
-                <span class="price">275.00€</span>
+                <img src="assets/pictures/sähkökitara.png" alt="" class="product-img">
+                <h2 class="product-title">SAITO S-622CS HSS ELEKTRISKA GITARR</h2>
+                <span class="price">2499.00€</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
             <!-- Tuote 5-->
             <div class="product-box">
+                <img src="assets/pictures/rummut.png" alt="" class="product-img">
+                <h2 class="product-title">YAMAHA RYDEEN STADARD TRUMMOR</h2>
+                <span class="price">275.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 6-->
+            <div class="product-box">
                 <img src="assets/pictures/foni.png" alt="" class="product-img">
                 <h2 class="product-title">SAXOFON</h2>
                 <span class="price">1179.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+
+            <!-- Tuote 7-->
+            <div class="product-box">
+                <img src="assets/pictures/kaapeli.png" alt="" class="product-img">
+                <h2 class="product-title">TRS-KABEL 3M</h2>
+                <span class="price">23.90€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 8-->
+            <div class="product-box">
+                <img src="assets/pictures/mikrofoni.png" alt="" class="product-img">
+                <h2 class="product-title">RODE NT1-A SÅNGUPPSÄTTNING</h2>
+                <span class="price">198.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 9-->
+            <div class="product-box">
+                <img src="assets/pictures/vahvistin.png" alt="" class="product-img">
+                <h2 class="product-title">MARSHALL DSL20CR FÖRSTÄRKARE</h2>
+                <span class="price">549.00€</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <!-- Tuote 10-->
+            <div class="product-box">
+                <img src="assets/pictures/miksaus.png" alt="" class="product-img">
+                <h2 class="product-title">YAMAHA MG20 XU MIXBORD</h2>
+                <span class="price">899.00€</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
         
@@ -485,7 +683,7 @@ var languageImageSrcMap = {
 
                     Tervetuloa = "Villkommen till meidän nettisivu";
 
-                    // Handle language change to Swedish
+
                     break;
                  
                    
