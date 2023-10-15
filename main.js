@@ -50,7 +50,7 @@ function ready(){
 }
 // Buy Button 
 function buyButtonClicked(){
-    alert('Your order is placed');
+
     var cartContent = document.getElementsByClassName('cart-content')[0];
     while (cartContent.hasChildNodes()){
         cartContent.removeChild(cartContent.firstChild);
